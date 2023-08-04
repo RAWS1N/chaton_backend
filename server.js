@@ -44,8 +44,8 @@ io.on('connection',(socket) => {
 
     })
 
-    socket.off('diconnect',() => {
-      console.log("user diconected")
+    socket.off('disconnect',() => {
+      console.log("user disconnected")
       socket.leave(userData._id)
     })
 })
