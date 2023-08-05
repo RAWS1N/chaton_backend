@@ -5,7 +5,7 @@ import {Server} from 'socket.io'
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("server is started");
+  res.status(200).json({success:true,message:"welcome to chaton backend"})
 });
 
 const server = app.listen(process.env.PORT, () => {

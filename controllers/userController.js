@@ -94,7 +94,7 @@ export const ManageNotification = asyncHandler(async(req,res,next) => {
     }
 }
 catch(e){
-    console.log(e)
+   
     res.status(400).json({success:false,message:"Error Occured in notification manager"})
 }
     

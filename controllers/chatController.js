@@ -6,11 +6,7 @@ import Message from "../models/Message.js"
 
 export const accessChat = asyncHandler(async(req,res) => {
     const {userId} = req.body
-    console.log('hitted')
-    console.log(userId)
-    console.log(req.user._id)
     if(!userId){
-        console.log('userId not sent via param')
         return res.status(400).json({success:false,message:"userId required"})
     }
     const chatExist = await Chat.find({

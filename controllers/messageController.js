@@ -6,7 +6,6 @@ import User from '../models/User.js'
 export const CreateMessage = asyncHandler(async(req,res,next) => {
     const {content,chatId} = req.body
     if(!content || !chatId){
-        console.log("invalid data passed to request")
         return res.status(400).json({success:false,message:'invalid data passed'})
     }
 
@@ -32,7 +31,7 @@ export const CreateMessage = asyncHandler(async(req,res,next) => {
             res.status(200).json({success:true,data:messageData})
     }
     catch(e){
-        console.log(e)
+        res.status(400).json({success:false,message:"message was not created"})
     }
 
 
